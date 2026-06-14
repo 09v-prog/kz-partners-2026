@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poster × Loyallyst — Expo 2026, Астана</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231D6BF0'/><text y='.9em' font-size='62' x='50%' text-anchor='middle' dominant-baseline='top'>🍽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --blue:       #1D6BF0;
+      --blue-light: #EBF2FC;
+      --blue-mid:   #dbeafe;
+      --orange:     #FF6B35;
+      --dark:       #111827;
+      --mid:        #6b7280;
+      --light:      #f3f4f6;
+      --border:     #e5e7eb;
+      --white:      #ffffff;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--dark); -webkit-font-smoothing: antialiased; }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── TOPBAR ── */
+    .topbar { background: var(--blue); padding: 10px 20px; text-align: center; }
+    .topbar p { font-size: 13px; font-weight: 600; color: white; }
+
+    /* ── NAV ── */
+    nav { background: white; border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 760px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .nav-logo { font-size: 20px; font-weight: 900; color: var(--dark); text-decoration: none; letter-spacing: -0.5px; }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .lang-toggle { display: flex; background: var(--light); border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+    .lang-btn { padding: 6px 12px; font-size: 12px; font-weight: 700; color: var(--mid); background: transparent; border: none; cursor: pointer; transition: background 0.15s, color 0.15s; }
+    .lang-btn.active { background: var(--blue); color: white; }
+    .nav-btn { background: var(--blue); color: white; font-size: 13px; font-weight: 700; padding: 9px 16px; border-radius: 8px; text-decoration: none; white-space: nowrap; }
+
+    /* ── HERO ── */
+    .hero { background: var(--blue-light); }
+    .hero-inner { max-width: 760px; margin: 0 auto; padding: 48px 24px 44px; }
+    @media (min-width: 640px) {
+      .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; padding: 64px 24px 56px; }
+      .hero-right { display: flex; flex-direction: column; gap: 10px; padding-top: 54px; }
+      .hero h1 { font-size: 44px; }
+    }
+    .event-tag { display: inline-flex; align-items: center; gap: 6px; background: white; color: var(--orange); border: 1px solid #fde0d3; font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 20px; margin-bottom: 20px; }
+    .hero h1 { font-size: 36px; font-weight: 900; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 14px; }
+    .hero-sub { font-size: 15px; color: var(--mid); line-height: 1.6; margin-bottom: 24px; }
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+    .check-list li { display: flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 500; }
+    .check-list li::before { content: ''; width: 20px; height: 20px; background: var(--blue); border-radius: 50%; flex-shrink: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E"); background-size: 12px; background-repeat: no-repeat; background-position: center; }
+    .btn-blue { display: block; background: var(--blue); color: white; font-size: 16px; font-weight: 700; padding: 16px 20px; border-radius: 12px; text-decoration: none; text-align: center; margin-bottom: 10px; }
+    .btn-outline { display: flex; align-items: center; justify-content: center; gap: 8px; background: white; color: var(--dark); font-size: 15px; font-weight: 600; padding: 14px 20px; border-radius: 12px; text-decoration: none; border: 1px solid var(--border); }
+    .free-note { text-align: center; font-size: 12px; color: var(--mid); margin-top: 10px; }
+
+    /* ── TRUSTED ── */
+    .trusted { background: white; border-bottom: 1px solid var(--border); padding: 20px 0; }
+    .trusted-inner { max-width: 760px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 14px; }
+    .trusted-num { font-size: 24px; font-weight: 900; color: var(--blue); white-space: nowrap; }
+    .trusted-divider { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
+    .trusted-text { font-size: 13px; color: var(--mid); line-height: 1.4; }
+
+    /* ── SECTIONS ── */
+    .section { padding: 40px 24px; }
+    .section-body { max-width: 760px; margin: 0 auto; }
+    .section + .section { border-top: 1px solid var(--border); }
+    .section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+    .section-title { font-size: 26px; font-weight: 900; letter-spacing: -0.5px; line-height: 1.15; margin-bottom: 6px; }
+    .section-desc { font-size: 15px; color: var(--mid); line-height: 1.6; margin-bottom: 24px; }
+
+    /* ── OFFER ── */
+    .offer-grid { display: flex; flex-direction: column; gap: 12px; }
+    @media (min-width: 640px) { .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; } }
+    .offer-poster { background: var(--blue); border-radius: 16px; padding: 24px; color: white; }
+    .offer-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; opacity: 0.75; margin-bottom: 8px; }
+    .offer-value { font-size: 54px; font-weight: 900; line-height: 1; letter-spacing: -2px; margin-bottom: 6px; }
+    .offer-desc { font-size: 14px; opacity: 0.88; line-height: 1.5; }
+    .offer-divider { height: 1px; background: rgba(255,255,255,0.2); margin: 16px 0; }
+    .offer-checklist { display: flex; flex-direction: column; gap: 9px; }
+    .offer-check { display: flex; align-items: center; gap: 9px; font-size: 13px; color: rgba(255,255,255,0.9); }
+    .offer-check-icon { width: 20px; height: 20px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 11px; }
+    .offer-loyallyst { background: var(--blue-light); border-radius: 16px; padding: 24px; border: 1px solid var(--blue-mid); }
+    .offer-loyallyst .offer-eyebrow { color: var(--mid); opacity: 1; }
+    .offer-loyallyst .offer-value { color: var(--blue); }
+    .offer-loyallyst .offer-desc { color: var(--mid); opacity: 1; }
+    .offer-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+    .offer-stat { background: white; border-radius: 10px; padding: 10px 12px; text-align: center; }
+    .offer-stat-val { font-size: 18px; font-weight: 800; color: var(--blue); }
+    .offer-stat-lbl { font-size: 11px; color: var(--mid); margin-top: 2px; line-height: 1.3; }
+
+    /* ── FEATURES ── */
+    .feature-list { display: flex; flex-direction: column; }
+    @media (min-width: 640px) { .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; } }
+    .feature-row { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    @media (min-width: 640px) { .feature-row:nth-last-child(-n+2) { border-bottom: none; } }
+    .feature-row:last-child { border-bottom: none; }
+    .feature-icon-wrap { width: 42px; height: 42px; background: var(--blue-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .feature-name { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+    .feature-text { font-size: 13px; color: var(--mid); line-height: 1.5; }
+
+    /* ── STATS ── */
+    .stats-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .stat-cell { background: white; padding: 20px 10px; text-align: center; }
+    .stat-val { font-size: 22px; font-weight: 900; color: var(--blue); letter-spacing: -1px; line-height: 1; }
+    .stat-lbl { font-size: 11px; color: var(--mid); margin-top: 4px; line-height: 1.3; }
+
+    /* ── STEPS ── */
+    .steps { display: flex; flex-direction: column; }
+    @media (min-width: 640px) { .steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0 24px; } .step { border-bottom: none !important; border-right: 1px solid var(--border); padding-right: 24px; } .step:last-child { border-right: none; } }
+    .step { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .step:last-child { border-bottom: none; }
+    .step-num { width: 32px; height: 32px; background: var(--blue); border-radius: 50%; color: white; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-name { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+    .step-desc { font-size: 13px; color: var(--mid); line-height: 1.5; }
+
+    /* ── POSTIE ── */
+    .postie-card { background: var(--dark); border-radius: 16px; padding: 24px; color: white; }
+    .postie-badge { display: inline-block; background: var(--orange); color: white; font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; margin-bottom: 14px; }
+    .postie-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; line-height: 1.3; }
+    .postie-card p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 16px; }
+    .postie-items { display: flex; flex-direction: column; gap: 8px; }
+    @media (min-width: 640px) { .postie-items { display: grid; grid-template-columns: 1fr 1fr; } }
+    .postie-item { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.4; }
+    .postie-item::before { content: '→'; color: var(--blue); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── REVIEWS ── */
+    .reviews-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+    @media (min-width: 640px) { .reviews-grid { display: grid !important; grid-template-columns: 1fr 1fr; gap: 16px; } }
+    .review { background: var(--blue-light); border-radius: 16px; padding: 22px; }
+    .review-text { font-size: 14px; line-height: 1.6; color: var(--dark); margin-bottom: 14px; font-style: italic; }
+    .review-text::before { content: '"'; color: var(--blue); font-size: 20px; font-weight: 900; font-style: normal; }
+    .review-text::after  { content: '"'; color: var(--blue); font-size: 20px; font-weight: 900; font-style: normal; }
+    .review-author { font-size: 13px; font-weight: 700; }
+    .review-place  { font-size: 12px; color: var(--mid); margin-top: 2px; }
+
+    /* ── CTA ── */
+    .cta-section { padding: 40px 24px; background: var(--blue-light); }
+    .cta-section .section-desc { color: var(--mid); }
+    .cta-cols { display: flex; flex-direction: column; gap: 10px; }
+    @media (min-width: 640px) { .cta-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; } }
+    .btn-cta-primary { display: block; background: var(--blue); color: white; font-size: 16px; font-weight: 700; padding: 16px 20px; border-radius: 12px; text-decoration: none; text-align: center; }
+    .btn-wa { display: flex; align-items: center; justify-content: center; gap: 9px; background: white; color: var(--dark); font-size: 15px; font-weight: 600; padding: 14px 20px; border-radius: 12px; text-decoration: none; border: 1px solid var(--border); }
+
+    /* ── SOCIAL ── */
+    .social-section { padding: 32px 24px; border-top: 1px solid var(--border); }
+    .social-cards { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+    @media (min-width: 640px) { .social-cards { display: grid; grid-template-columns: 1fr 1fr; } }
+    .social-card { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px; text-decoration: none; color: var(--dark); background: white; }
+    .social-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .yt { background: #ff0000; color: white; font-size: 16px; font-weight: 700; }
+    .social-name { font-size: 14px; font-weight: 700; }
+    .social-meta { font-size: 12px; color: var(--mid); margin-top: 2px; }
+    .social-arr { color: var(--mid); font-size: 18px; margin-left: auto; }
+
+    /* ── FOOTER ── */
+    footer { padding: 24px; border-top: 1px solid var(--border); text-align: center; }
+    footer a { color: var(--blue); font-size: 14px; font-weight: 600; text-decoration: none; }
+    footer p { font-size: 12px; color: var(--mid); margin-top: 6px; }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <p data-key="topbar">📍 International Restaurant & Bar Expo 2026 · Астана · 16–18 июня</p>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="https://joinposter.kz" class="nav-logo">Poster</a>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+          <button class="lang-btn" onclick="setLang('kz')">ҚАЗ</button>
+        </div>
+        <a href="https://joinposter.kz/signup?ref=event_Loyalist_10%25_3month/dealer-cash-machinekz-expo2026" class="nav-btn" data-key="nav-cta">Попробовать бесплатно</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="event-tag" data-key="event-tag">🎯 Спецпредложение для гостей выставки</div>
+        <h1 data-key="hero-h1">Первая AI POS‑система для вашего заведения</h1>
+        <p class="hero-sub" data-key="hero-sub">Касса, склад, аналитика и CRM в одном сервисе. Плюс система лояльности Loyallyst — по специальной цене.</p>
+        <ul class="check-list">
+          <li data-key="check-1">AI-аналитика и контроль фудкоста</li>
+          <li data-key="check-2">Работает на любом iPad или Android</li>
+          <li data-key="check-3">Интеграция с Kaspi и Webkassa</li>
+        </ul>
+      </div>
+      <div class="hero-right">
+        <a href="https://joinposter.kz/dealer-cash-machinekz-expo2026" class="btn-blue" data-key="btn-hero">Зарегистрироваться со скидкой 10% →</a>
+        <a href="https://api.whatsapp.com/send/?phone=77000200572&text=Привет! Я с выставки Expo 2026, зашёл с сайта joinposter.kz/dealer-cash-machinekz-expo2026" class="btn-outline wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="#25D366"/></svg>
+          <span data-key="btn-wa">Написать менеджеру</span>
+        </a>
+        <p class="free-note" data-key="free-note">15 дней тестового доступа · Без карты</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUSTED -->
+  <div class="trusted">
+    <div class="trusted-inner">
+      <div class="trusted-num" data-key="trusted-num">30 000+</div>
+      <div class="trusted-divider"></div>
+      <div class="trusted-text" data-key="trusted-text">заведений по всему миру уже работают с Poster</div>
+    </div>
+  </div>
+
+  <!-- OFFER -->
+  <section class="section">
+    <div class="section-body">
+      <div class="section-eyebrow" data-key="offer-eyebrow">Только на выставке</div>
+      <div class="section-title" data-key="offer-title">Эксклюзивный оффер</div>
+      <p class="section-desc" data-key="offer-desc-main">Два продукта по специальной цене — только для гостей Expo 2026.</p>
+      <div class="offer-grid">
+        <div class="offer-poster">
+          <div class="offer-eyebrow" data-key="poster-eyebrow">POSTER POS</div>
+          <div class="offer-value">−10%</div>
+          <div class="offer-desc" data-key="poster-desc">При оплате любого тарифа на 3 месяца вперёд</div>
+          <div class="offer-divider"></div>
+          <div class="offer-checklist">
+            <div class="offer-check"><span class="offer-check-icon">✓</span><span data-key="poster-f1">Касса, склад, финансы и CRM в одном</span></div>
+            <div class="offer-check"><span class="offer-check-icon">✓</span><span data-key="poster-f2">Работает без интернета</span></div>
+            <div class="offer-check"><span class="offer-check-icon">✓</span><span data-key="poster-f3">Интеграция с Kaspi и Webkassa</span></div>
+            <div class="offer-check"><span class="offer-check-icon">✓</span><span data-key="poster-f4">Поддержка 24/7</span></div>
+          </div>
+        </div>
+        <div class="offer-loyallyst">
+          <div class="offer-eyebrow" data-key="loy-eyebrow">LOYALLYST — СИСТЕМА ЛОЯЛЬНОСТИ</div>
+          <div class="offer-value">2 = 1</div>
+          <div class="offer-desc" data-key="loy-desc">Два месяца по цене одного. Карточки в Apple & Google Wallet — без пластика и разработчиков</div>
+          <div class="offer-stats">
+            <div class="offer-stat"><div class="offer-stat-val">3x</div><div class="offer-stat-lbl" data-key="stat-1-lbl">удержание гостей</div></div>
+            <div class="offer-stat"><div class="offer-stat-val">68%</div><div class="offer-stat-lbl" data-key="stat-2-lbl">открываемость пушей</div></div>
+            <div class="offer-stat"><div class="offer-stat-val">44%</div><div class="offer-stat-lbl" data-key="stat-3-lbl">клиентов возвращается</div></div>
+            <div class="offer-stat"><div class="offer-stat-val">500+</div><div class="offer-stat-lbl" data-key="stat-4-lbl">бизнесов используют</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="section-body">
+      <div class="section-eyebrow" data-key="feat-eyebrow">Poster POS</div>
+      <div class="section-title" data-key="feat-title">Всё, что нужно заведению</div>
+      <div class="feature-list">
+        <div class="feature-row"><div class="feature-icon-wrap">🖥️</div><div><div class="feature-name" data-key="feat-1-name">Онлайн-касса</div><div class="feature-text" data-key="feat-1-text">Работает на любом планшете или ноутбуке. Не гаснет даже без интернета</div></div></div>
+        <div class="feature-row"><div class="feature-icon-wrap">📦</div><div><div class="feature-name" data-key="feat-2-name">Склад и учёт</div><div class="feature-text" data-key="feat-2-text">Остатки, списания, инвентаризация — в реальном времени</div></div></div>
+        <div class="feature-row"><div class="feature-icon-wrap">📊</div><div><div class="feature-name" data-key="feat-3-name">Аналитика и P&L</div><div class="feature-text" data-key="feat-3-text">Выручка, фудкост, ABC-анализ — с телефона через Poster Boss</div></div></div>
+        <div class="feature-row"><div class="feature-icon-wrap">🎁</div><div><div class="feature-name" data-key="feat-4-name">CRM и маркетинг</div><div class="feature-text" data-key="feat-4-text">Программа лояльности, акции и база гостей прямо в системе</div></div></div>
+        <div class="feature-row"><div class="feature-icon-wrap">📱</div><div><div class="feature-name" data-key="feat-5-name">Интеграция с Kaspi</div><div class="feature-text" data-key="feat-5-text">Автопередача суммы чека — без ручного ввода и ошибок кассира</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section" style="padding-top: 0;">
+    <div class="section-body">
+      <div class="stats-row">
+        <div class="stat-cell"><div class="stat-val">30K+</div><div class="stat-lbl" data-key="stats-1">заведений</div></div>
+        <div class="stat-cell"><div class="stat-val">15</div><div class="stat-lbl" data-key="stats-2">дней теста</div></div>
+        <div class="stat-cell"><div class="stat-val">24/7</div><div class="stat-lbl" data-key="stats-3">поддержка</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOYALLYST -->
+  <section class="section">
+    <div class="section-body">
+      <div class="section-eyebrow" data-key="loy-section-eyebrow">Loyallyst</div>
+      <div class="section-title" data-key="loy-section-title">Лояльность за 1 день</div>
+      <p class="section-desc" data-key="loy-section-desc">Запустите программу без пластиковых карточек и разработчиков.</p>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div><div class="step-name" data-key="step-1-name">Гость сканирует QR</div><div class="step-desc" data-key="step-1-desc">Карточка мгновенно появляется в Apple Wallet или Google Wallet — без приложений</div></div></div>
+        <div class="step"><div class="step-num">2</div><div><div class="step-name" data-key="step-2-name">Накапливает бонусы</div><div class="step-desc" data-key="step-2-desc">Кешбек, уровни, «8-й кофе бесплатно» — любая схема без программистов</div></div></div>
+        <div class="step"><div class="step-num">3</div><div><div class="step-name" data-key="step-3-name">Возвращается сам</div><div class="step-desc" data-key="step-3-desc">Автопуши, если не заходил 30 дней. 44% клиентов возвращаются после напоминания</div></div></div>
+      </div>
+      <p style="margin-top: 16px; text-align: center;"><a href="https://www.loyallyst.com" style="color: var(--mid); font-size: 13px; text-decoration: none;">loyallyst.com →</a></p>
+    </div>
+  </section>
+
+  <!-- POSTIE AI -->
+  <section class="section">
+    <div class="section-body">
+      <div class="postie-card">
+        <span class="postie-badge">✨ Postie AI</span>
+        <h3 data-key="postie-title">AI-ассистент, с которым говорят о бизнесе</h3>
+        <p data-key="postie-desc">Задайте вопрос голосом или текстом — получите отчёт. Никакого Excel и ручного ввода.</p>
+        <div class="postie-items">
+          <div class="postie-item" data-key="postie-1">Фото накладной → готовая поставка в системе</div>
+          <div class="postie-item" data-key="postie-2">Банковская выписка → транзакции с категориями</div>
+          <div class="postie-item" data-key="postie-3">«Почему упала выручка?» → анализ за секунды</div>
+          <div class="postie-item" data-key="postie-4">Контроль фудкоста и прогноз выручки</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section">
+    <div class="section-body">
+      <div class="section-eyebrow" data-key="review-eyebrow">Клиенты в Казахстане</div>
+      <div class="section-title" data-key="review-title">Говорят сами</div>
+      <div class="reviews-grid">
+        <div class="review">
+          <p class="review-text" data-key="review-1-text">Самое первое преимущество — это мобильность. Я в любой момент могу откорректировать цены, посмотреть отчеты — всё это в телефоне.</p>
+          <div class="review-author">Приходько Денис</div>
+          <div class="review-place" data-key="review-1-place">Руководитель бара Kruger, Астана</div>
+        </div>
+        <div class="review">
+          <p class="review-text" data-key="review-2-text">Poster простой в использовании — меню, склад, инвентаризация. Если что-то непонятно — поддержка помогала сразу.</p>
+          <div class="review-author">Джабаров Олег</div>
+          <div class="review-place" data-key="review-2-place">Владелец лаунж-бара Black Room, Астана</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-body">
+      <div class="section-eyebrow" data-key="cta-eyebrow">Старт</div>
+      <div class="section-title" data-key="cta-title">Начните сегодня</div>
+      <p class="section-desc" data-key="cta-desc">Специальная цена — только для гостей Expo 2026. Регистрация — 2 минуты.</p>
+      <div class="cta-cols">
+        <a href="https://joinposter.kz/dealer-cash-machinekz-expo2026" class="btn-cta-primary" data-key="btn-cta">Зарегистрироваться со скидкой 10% →</a>
+        <a href="https://api.whatsapp.com/send/?phone=77000200572&text=Привет! Я с выставки Expo 2026, зашёл с сайта joinposter.kz/dealer-cash-machinekz-expo2026" class="btn-wa wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="#25D366"/></svg>
+          <span data-key="btn-wa-cta">Написать менеджеру в WhatsApp</span>
+        </a>
+      </div>
+      <p class="free-note" style="color: var(--mid);" data-key="cta-note">15 дней тестового доступа · Без карты · Без обязательств</p>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section class="social-section">
+    <div class="section-body" style="padding: 0;">
+      <div class="section-eyebrow" data-key="social-eyebrow">Подписывайтесь</div>
+      <div class="section-title" data-key="social-title">Poster в Казахстане</div>
+      <div class="social-cards">
+        <a href="https://www.instagram.com/joinposter.kz" class="social-card">
+          <div class="social-icon ig">📸</div>
+          <div><div class="social-name" data-key="social-1-name">@joinposter.kz</div><div class="social-meta" data-key="social-1-meta">3.7K · лайфхаки и кейсы</div></div>
+          <div class="social-arr">›</div>
+        </a>
+        <a href="https://youtube.com/@posterposkazakhstan" class="social-card">
+          <div class="social-icon yt">▶</div>
+          <div><div class="social-name" data-key="social-2-name">Poster POS Kazakhstan</div><div class="social-meta" data-key="social-2-meta">5.96K · 172 видео</div></div>
+          <div class="social-arr">›</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div style="max-width:760px;margin:0 auto;">
+      <a href="https://joinposter.kz">joinposter.kz</a>
+      <p>© Poster POS, 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const T = {
+      ru: {
+        'topbar':           '📍 International Restaurant & Bar Expo 2026 · Астана · 16–18 июня',
+        'nav-cta':          'Попробовать бесплатно',
+        'event-tag':        '🎯 Спецпредложение для гостей выставки',
+        'hero-h1':          'Первая AI POS‑система для вашего заведения',
+        'hero-sub':         'Касса, склад, аналитика и CRM в одном сервисе. Плюс система лояльности Loyallyst — по специальной цене.',
+        'check-1':          'AI-аналитика и контроль фудкоста',
+        'check-2':          'Работает на любом iPad или Android',
+        'check-3':          'Интеграция с Kaspi и Webkassa',
+        'btn-hero':         'Зарегистрироваться со скидкой 10% →',
+        'btn-wa':           'Написать менеджеру',
+        'free-note':        '15 дней тестового доступа · Без карты',
+        'trusted-num':      '30 000+',
+        'trusted-text':     'заведений по всему миру уже работают с Poster',
+        'offer-eyebrow':    'Только на выставке',
+        'offer-title':      'Эксклюзивный оффер',
+        'offer-desc-main':  'Два продукта по специальной цене — только для гостей Expo 2026.',
+        'poster-eyebrow':   'POSTER POS',
+        'poster-desc':      'При оплате любого тарифа на 3 месяца вперёд',
+        'poster-f1':        'Касса, склад, финансы и CRM в одном',
+        'poster-f2':        'Работает без интернета',
+        'poster-f3':        'Интеграция с Kaspi и Webkassa',
+        'poster-f4':        'Поддержка 24/7',
+        'loy-eyebrow':      'LOYALLYST — СИСТЕМА ЛОЯЛЬНОСТИ',
+        'loy-desc':         'Два месяца по цене одного. Карточки в Apple & Google Wallet — без пластика и разработчиков',
+        'stat-1-lbl':       'удержание гостей',
+        'stat-2-lbl':       'открываемость пушей',
+        'stat-3-lbl':       'клиентов возвращается',
+        'stat-4-lbl':       'бизнесов используют',
+        'feat-eyebrow':     'Poster POS',
+        'feat-title':       'Всё, что нужно заведению',
+        'feat-1-name':      'Онлайн-касса',
+        'feat-1-text':      'Работает на любом планшете или ноутбуке. Не гаснет даже без интернета',
+        'feat-2-name':      'Склад и учёт',
+        'feat-2-text':      'Остатки, списания, инвентаризация — в реальном времени',
+        'feat-3-name':      'Аналитика и P&L',
+        'feat-3-text':      'Выручка, фудкост, ABC-анализ — с телефона через Poster Boss',
+        'feat-4-name':      'CRM и маркетинг',
+        'feat-4-text':      'Программа лояльности, акции и база гостей прямо в системе',
+        'feat-5-name':      'Интеграция с Kaspi',
+        'feat-5-text':      'Автопередача суммы чека — без ручного ввода и ошибок кассира',
+        'stats-1':          'заведений',
+        'stats-2':          'дней теста',
+        'stats-3':          'поддержка',
+        'loy-section-eyebrow': 'Loyallyst',
+        'loy-section-title': 'Лояльность за 1 день',
+        'loy-section-desc': 'Запустите программу без пластиковых карточек и разработчиков.',
+        'step-1-name':      'Гость сканирует QR',
+        'step-1-desc':      'Карточка мгновенно появляется в Apple Wallet или Google Wallet — без приложений',
+        'step-2-name':      'Накапливает бонусы',
+        'step-2-desc':      'Кешбек, уровни, «8-й кофе бесплатно» — любая схема без программистов',
+        'step-3-name':      'Возвращается сам',
+        'step-3-desc':      'Автопуши, если не заходил 30 дней. 44% клиентов возвращаются после напоминания',
+        'postie-title':     'AI-ассистент, с которым говорят о бизнесе',
+        'postie-desc':      'Задайте вопрос голосом или текстом — получите отчёт. Никакого Excel и ручного ввода.',
+        'postie-1':         'Фото накладной → готовая поставка в системе',
+        'postie-2':         'Банковская выписка → транзакции с категориями',
+        'postie-3':         '«Почему упала выручка?» → анализ за секунды',
+        'postie-4':         'Контроль фудкоста и прогноз выручки',
+        'review-eyebrow':   'Клиенты в Казахстане',
+        'review-title':     'Говорят сами',
+        'review-1-text':    'Самое первое преимущество — это мобильность. Я в любой момент могу откорректировать цены, посмотреть отчеты — всё это в телефоне.',
+        'review-1-place':   'Руководитель бара Kruger, Астана',
+        'review-2-text':    'Poster простой в использовании — меню, склад, инвентаризация. Если что-то непонятно — поддержка помогала сразу.',
+        'review-2-place':   'Владелец лаунж-бара Black Room, Астана',
+        'cta-eyebrow':      'Старт',
+        'cta-title':        'Начните сегодня',
+        'cta-desc':         'Специальная цена — только для гостей Expo 2026. Регистрация — 2 минуты.',
+        'btn-cta':          'Зарегистрироваться со скидкой 10% →',
+        'btn-wa-cta':       'Написать менеджеру в WhatsApp',
+        'cta-note':         '15 дней тестового доступа · Без карты · Без обязательств',
+        'social-eyebrow':   'Подписывайтесь',
+        'social-title':     'Poster в Казахстане',
+        'social-1-name':    '@joinposter.kz',
+        'social-1-meta':    '3.7K · лайфхаки и кейсы',
+        'social-2-name':    'Poster POS Kazakhstan',
+        'social-2-meta':    '5.96K · 172 видео',
+      },
+      kz: {
+        'topbar':           '📍 International Restaurant & Bar Expo 2026 · Астана · 16–18 маусым',
+        'nav-cta':          'Тегін сынап көру',
+        'event-tag':        '🎯 Көрме қонақтарына арнайы ұсыныс',
+        'hero-h1':          'Мейрамханаңыз үшін бірінші AI POS‑жүйесі',
+        'hero-sub':         'Касса, қойма, аналитика және CRM бір жерде. Loyallyst адалдық жүйесі — арнайы бағамен.',
+        'check-1':          'AI-аналитика және фудкост бақылауы',
+        'check-2':          'Кез келген iPad немесе Android-та жұмыс істейді',
+        'check-3':          'Kaspi және Webkassa интеграциясы',
+        'btn-hero':         '10% жеңілдікпен тіркелу →',
+        'btn-wa':           'Менеджерге жазу',
+        'free-note':        '15 күн сынақ қол жеткізу · Карта жоқ',
+        'trusted-num':      '30 000+',
+        'trusted-text':     'мекеме бүкіл әлемде Poster-мен жұмыс істейді',
+        'offer-eyebrow':    'Тек көрмеде',
+        'offer-title':      'Эксклюзивті ұсыныс',
+        'offer-desc-main':  'Екі өнім арнайы бағамен — тек Expo 2026 қонақтарына.',
+        'poster-eyebrow':   'POSTER POS',
+        'poster-desc':      'Кез келген тарифті 3 айға алдын ала төлегенде',
+        'poster-f1':        'Касса, қойма, қаржы және CRM бір жерде',
+        'poster-f2':        'Интернетсіз жұмыс істейді',
+        'poster-f3':        'Kaspi және Webkassa интеграциясы',
+        'poster-f4':        '24/7 қолдау',
+        'loy-eyebrow':      'LOYALLYST — АДАЛДЫҚ ЖҮЙЕСІ',
+        'loy-desc':         'Екі айдың бағасына бір ай. Apple & Google Wallet карталары — пластиксіз және бағдарламашысыз',
+        'stat-1-lbl':       'қонақтарды ұстап қалу',
+        'stat-2-lbl':       'пуш ашылу деңгейі',
+        'stat-3-lbl':       'клиент қайтады',
+        'stat-4-lbl':       'бизнес қолданады',
+        'feat-eyebrow':     'Poster POS',
+        'feat-title':       'Мекемеге қажет барлығы',
+        'feat-1-name':      'Онлайн касса',
+        'feat-1-text':      'Кез келген планшет немесе ноутбукта. Интернетсіз де өшпейді',
+        'feat-2-name':      'Қойма және есеп',
+        'feat-2-text':      'Қалдықтар, есептен шығару, түгендеу — нақты уақытта',
+        'feat-3-name':      'Аналитика және P&L',
+        'feat-3-text':      'Түсім, фудкост, ABC-талдау — телефоннан Poster Boss арқылы',
+        'feat-4-name':      'CRM және маркетинг',
+        'feat-4-text':      'Адалдық бағдарламасы, акциялар және қонақтар базасы жүйеде',
+        'feat-5-name':      'Kaspi интеграциясы',
+        'feat-5-text':      'Чек сомасы автоматты беріледі — қол енгізусіз және қателіксіз',
+        'stats-1':          'мекеме',
+        'stats-2':          'күн сынақ',
+        'stats-3':          'қолдау',
+        'loy-section-eyebrow': 'Loyallyst',
+        'loy-section-title': '1 күнде адалдық',
+        'loy-section-desc': 'Пластик карталарсыз және бағдарламашысыз іске қосыңыз.',
+        'step-1-name':      'Қонақ QR сканерлейді',
+        'step-1-desc':      'Карта Apple Wallet немесе Google Wallet-те бірден пайда болады — қосымшасыз',
+        'step-2-name':      'Бонус жинайды',
+        'step-2-desc':      'Кешбек, деңгейлер, «8-ші кофе тегін» — бағдарламашысыз кез келген схема',
+        'step-3-name':      'Өзі қайтады',
+        'step-3-desc':      '30 күн келмесе автопуш. 44% клиент еске салғаннан кейін қайтады',
+        'postie-title':     'Бизнес туралы сөйлесуге болатын AI-көмекші',
+        'postie-desc':      'Дауыспен немесе мәтінмен сұрақ қойыңыз — есеп алыңыз. Excel және қол енгізу жоқ.',
+        'postie-1':         'Жүкқұжат суреті → жүйеде дайын жеткізілім',
+        'postie-2':         'Банк үзіндісі → санаттарымен транзакциялар',
+        'postie-3':         '«Неге түсім түсті?» → секундтарда талдау',
+        'postie-4':         'Фудкост бақылауы және түсім болжамы',
+        'review-eyebrow':   'Қазақстандағы клиенттер',
+        'review-title':     'Өздері айтады',
+        'review-1-text':    'Ең бірінші артықшылық — мобильділік. Кез келген уақытта бағаларды түзетіп, телефоннан есептерді қарай аламын.',
+        'review-1-place':   'Kruger барының жетекшісі, Астана',
+        'review-2-text':    'Poster қарапайым және қажетті функциялармен — мәзір, қойма, түгендеу. Түсінбегенде қолдау бірден көмектесті.',
+        'review-2-place':   'Black Room лаунж-барының иесі, Астана',
+        'cta-eyebrow':      'Бастау',
+        'cta-title':        'Бүгін бастаңыз',
+        'cta-desc':         'Арнайы баға — тек Expo 2026 қонақтарына. Тіркелу — 2 минут.',
+        'btn-cta':          '10% жеңілдікпен тіркелу →',
+        'btn-wa-cta':       'WhatsApp-та менеджерге жазу',
+        'cta-note':         '15 күн сынақ қол жеткізу · Карта жоқ · Міндеттеме жоқ',
+        'social-eyebrow':   'Жазылыңыз',
+        'social-title':     'Қазақстандағы Poster',
+        'social-1-name':    '@joinposter.kz',
+        'social-1-meta':    '3.7K · лайфхактер мен кейстер',
+        'social-2-name':    'Poster POS Kazakhstan',
+        'social-2-meta':    '5.96K · 172 бейне',
+      }
+    };
+
+    const WA = {
+      ru: 'Привет! Я с выставки Expo 2026, зашёл с сайта joinposter.kz/dealer-cash-machinekz-expo2026',
+      kz: 'Сәлем! Мен Expo 2026 көрмесінен, сайттан кірдім joinposter.kz/dealer-cash-machinekz-expo2026'
+    };
+
+    let currentLang = 'ru';
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (T[lang][key] !== undefined) el.textContent = T[lang][key];
+      });
+      document.querySelectorAll('.wa-btn').forEach(el => {
+        el.href = `https://api.whatsapp.com/send/?phone=77000200572&text=${encodeURIComponent(WA[lang])}`;
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.trim() === (lang === 'ru' ? 'RU' : 'ҚАЗ'));
+      });
+      document.documentElement.lang = lang === 'kz' ? 'kk' : 'ru';
+    }
+  </script>
+</body>
+</html>
