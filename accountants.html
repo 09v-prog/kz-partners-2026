@@ -1,0 +1,442 @@
+<p>test \d x</p>
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Партнёрская программа Poster для бухгалтеров · Казахстан</title>
+<meta name="description" content="Вы уже ведёте учёт в Poster. Рекомендуйте его клиентам, получайте выплаты каждый месяц и бесплатное обучение для бухгалтеров.">
+<meta property="og:title" content="Партнёрская программа Poster для бухгалтеров">
+<meta property="og:description" content="До 54 000 ₸ за каждого клиента, которому вы порекомендуете Poster. Обучение и личный менеджер — бесплатно.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<script>
+  // Тема: сохранённый выбор → системная настройка
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('theme'); } catch (e) {}
+    if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<style>
+  :root {
+    --bg: #F7F7F4; --surface: #FFFFFF; --text: #15171A; --muted: #565C63; --border: #E2E3DE;
+    --accent: #0F7A5A; --on-accent: #FFFFFF; --accent-strong: #0B6249; --accent-soft: #E3F2EB;
+    --ink-bg: #15171A; --ink-text: #F4F5F2; --ink-muted: #B4BAC0; --ink-border: #30353A; --ink-accent: #4FD3A0;
+  }
+  [data-theme="dark"] {
+    --bg: #101214; --surface: #181B1E; --text: #F1F2EF; --muted: #A6ACB2; --border: #2B3034;
+    --accent: #3FC796; --on-accent: #0B1F17; --accent-strong: #5FD9AB; --accent-soft: #173328;
+    --ink-bg: #0B2A1F; --ink-text: #F1F2EF; --ink-muted: #A9C3B8; --ink-border: #245241; --ink-accent: #5FD9AB;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.55; }
+  h1, h2, h3, .display { font-family: Manrope, Inter, sans-serif; }
+  h1, h2, h3, p { margin: 0; }
+  a { color: var(--accent-strong); }
+  .wrap { max-width: 1160px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+  .muted { color: var(--muted); }
+  .band { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .section { padding-top: 80px; padding-bottom: 80px; }
+  .h2 { font-size: clamp(28px, 4vw, 38px); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 12px; }
+  .lead { font-size: 18px; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .band .card { background: var(--bg); }
+  .card h3 { font-size: 19px; }
+  .card p { color: var(--muted); font-size: 15px; }
+  .icon { width: 28px; height: 28px; stroke: var(--accent-strong); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .todo { color: #B45309; font-weight: 500; }
+  [data-theme="dark"] .todo { color: #F5B35C; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 22px; border-radius: 12px; font-weight: 600; font-size: 16px; text-decoration: none; cursor: pointer; border: 1px solid transparent; font-family: inherit; }
+  .btn-primary { background: var(--accent); color: var(--on-accent); }
+  .btn-primary:hover { filter: brightness(1.08); }
+  .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
+  .btn-outline { color: var(--accent-strong); border-color: var(--accent); background: transparent; }
+
+  /* Header */
+  header { border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 0; z-index: 10; }
+  .head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 16px; padding-top: 12px; padding-bottom: 12px; }
+  .logo { font-family: Manrope, sans-serif; font-weight: 800; font-size: 22px; color: var(--text); text-decoration: none; }
+  .logo span { font-weight: 600; font-size: 14px; color: var(--muted); }
+  nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; }
+  nav a.link { color: var(--muted); text-decoration: none; font-size: 15px; }
+  nav a.link:hover { color: var(--text); }
+  .theme-btn { width: 44px; height: 44px; border-radius: 22px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 20px; cursor: pointer; line-height: 1; }
+  @media (max-width: 720px) { nav a.link { display: none; } }
+
+  /* Hero */
+  .hero { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; padding-top: 72px; padding-bottom: 64px; }
+  .hero-main { flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+  .pill { align-self: flex-start; padding: 6px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-weight: 600; font-size: 14px; }
+  h1 { font-weight: 800; font-size: clamp(34px, 5.2vw, 52px); line-height: 1.08; letter-spacing: -0.02em; }
+  .hero-sub { font-size: 19px; color: var(--muted); max-width: 600px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-card { flex: 1 1 320px; min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+  .kv { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+  .kv:last-of-type { border-bottom: 0; padding-bottom: 0; }
+  .kv strong { font-family: Manrope, sans-serif; font-size: 22px; }
+  .kv strong.big { font-size: 34px; color: var(--accent-strong); }
+
+  .strip { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; padding-top: 36px; padding-bottom: 36px; }
+  .strip > div { flex: 999 1 520px; min-width: 0; }
+  .strip h2 { font-size: 24px; margin-bottom: 6px; }
+
+  /* Steps */
+  .num { width: 44px; height: 44px; border-radius: 22px; background: var(--accent-soft); color: var(--accent-strong); display: flex; align-items: center; justify-content: center; font-family: Manrope, sans-serif; font-weight: 800; font-size: 18px; }
+  .step { display: flex; flex-direction: column; gap: 10px; }
+  .step h3 { font-size: 19px; }
+  .step p { color: var(--muted); font-size: 15px; }
+
+  /* Calculator */
+  .calc { display: flex; flex-wrap: wrap; gap: 40px; }
+  .calc-main { flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
+  .field { display: flex; flex-direction: column; gap: 10px; }
+  .field-label { font-weight: 600; }
+  input[type=range] { width: 100%; height: 32px; accent-color: var(--accent); }
+  .seg { min-height: 44px; padding: 10px 18px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-weight: 600; font-size: 15px; cursor: pointer; font-family: inherit; }
+  .seg[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .tier { border: 1px solid var(--border); background: var(--surface); border-radius: 14px; padding: 16px; }
+  .tier.on { border: 2px solid var(--accent); background: var(--accent-soft); padding: 15px; }
+  .tier .name { font-weight: 700; font-family: Manrope, sans-serif; }
+  .tier.on .name { color: var(--accent-strong); }
+  .tier .rule { font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .tier .months { font-size: 20px; font-weight: 700; font-family: Manrope, sans-serif; margin-top: 8px; }
+  @media (max-width: 520px) { .tiers { grid-template-columns: 1fr; } }
+  .result { flex: 1 1 340px; min-width: 0; align-self: flex-start; background: var(--ink-bg); color: var(--ink-text); border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 18px; }
+  .result .k { font-size: 14px; color: var(--ink-muted); }
+  .result .v { font-family: Manrope, sans-serif; font-weight: 800; font-size: 36px; }
+  .result .v.mid { font-size: 28px; }
+  .result .total { border-top: 1px solid var(--ink-border); padding-top: 18px; }
+  .result .total .v { font-size: clamp(36px, 5vw, 48px); color: var(--ink-accent); }
+  .result .note { font-size: 13px; color: var(--ink-muted); }
+  .result .btn { background: var(--ink-accent); color: #0B1F17; font-weight: 700; }
+
+  /* FAQ */
+  .faq { max-width: 820px; display: flex; flex-direction: column; gap: 14px; }
+  details { border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; background: var(--bg); }
+  summary { font-weight: 600; font-size: 17px; cursor: pointer; }
+  details p { margin-top: 12px; color: var(--muted); }
+
+  /* Form */
+  .join { display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start; }
+  .join-text { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+  form { flex: 999 1 480px; min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .f { display: flex; flex-direction: column; gap: 6px; }
+  .f label { font-weight: 600; font-size: 14px; }
+  .f input, .f select { min-height: 46px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 16px; font-family: inherit; }
+  .f input:focus, .f select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .full { grid-column: 1 / -1; }
+  .consent { display: flex; gap: 10px; align-items: flex-start; }
+  .consent input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--accent); }
+  .consent label { font-size: 14px; color: var(--muted); font-weight: 400; }
+  .form-msg { font-size: 15px; }
+  .form-msg.ok { color: var(--accent-strong); }
+  .form-msg.err { color: #C2410C; }
+
+  footer { border-top: 1px solid var(--border); }
+  .foot { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; color: var(--muted); font-size: 14px; padding-top: 28px; padding-bottom: 28px; }
+  .foot a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap head">
+    <a class="logo" href="#top">Poster <span>для бухгалтеров</span></a>
+    <nav>
+      <a class="link" href="#learn">Обучение</a>
+      <a class="link" href="#calc">Сколько заработаете</a>
+      <a class="link" href="#faq">Вопросы</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Переключить светлую и тёмную тему">◐</button>
+      <a class="btn btn-primary" href="#join">Стать партнёром</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="top" class="wrap hero">
+    <div class="hero-main">
+      <p class="pill">Для бухгалтеров, которые уже ведут учёт в Poster</p>
+      <h1>Вы уже знаете Poster. Рекомендуйте его клиентам и получайте до <span data-out="heroPerClient">54 000</span> ₸ с каждого</h1>
+      <p class="hero-sub">Вы работаете в Poster у клиента и знаете систему изнутри: склад, техкарты, отчёты. Порекомендуйте её другим кафе и магазинам, которые обслуживаете, и получайте 30% от их подписки каждый месяц, до 12 месяцев. А мы бесплатно доучим вас до уровня эксперта.</p>
+      <div class="row">
+        <a class="btn btn-primary" href="#join">Стать партнёром</a>
+        <a class="btn btn-ghost" href="#calc">Посчитать доход</a>
+      </div>
+      <p class="muted" style="font-size:14px">Без вложений и плана продаж. Регистрация занимает 5 минут.</p>
+    </div>
+    <aside class="hero-card" aria-label="Пример дохода">
+      <p class="muted" style="font-size:14px;font-weight:500">Пример: вы привели 5 клиентов</p>
+      <div class="kv"><span class="muted">Каждый месяц</span><strong><span data-out="exMonthly">22 500</span> ₸</strong></div>
+      <div class="kv"><span class="muted">Срок выплат</span><strong><span data-out="exMonths">12</span> мес.</strong></div>
+      <div class="kv"><span class="muted">Итого</span><strong class="big"><span data-out="exTotal">270 000</span> ₸</strong></div>
+      <p class="muted" style="font-size:13px">При среднем платеже клиента <span data-out="avgCheck">15 000</span> ₸ в месяц.</p>
+    </aside>
+  </section>
+
+  <section class="band">
+    <div class="wrap strip">
+      <div>
+        <h2>Ваш опыт в Poster — лучший аргумент для клиента</h2>
+        <p class="muted">Вам не нужно пересказывать рекламу. Вы показываете систему на реальных отчётах и честно говорите, как она помогает в учёте.</p>
+      </div>
+      <a class="btn btn-outline" href="#join">Оставить заявку</a>
+    </div>
+  </section>
+
+  <section id="value" class="wrap section">
+    <div style="max-width:720px;margin-bottom:36px">
+      <h2 class="h2">То, что вы уже видите в работе, — ваши аргументы</h2>
+      <p class="lead">Чем больше ваших клиентов в Poster, тем меньше ручной работы у вас: готовые данные вместо стопки чеков и сообщений в WhatsApp.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg>
+        <h3>Себестоимость и склад считаются сами</h3>
+        <p>Техкарты списывают продукты с каждой продажей. Видны остатки, фактическая себестоимость и списания.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 15h3"/></svg>
+        <h3>Продажи и оплаты по каждой смене</h3>
+        <p>Наличные, карта, Kaspi в одном отчёте. Не нужно собирать данные по кассирам и чатам.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        <h3>Свой доступ для бухгалтера</h3>
+        <p>Отдельная роль с доступом к отчётам и складу. Смотрите данные клиента онлайн, когда вам удобно.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+        <h3>Выгрузка для 1С</h3>
+        <p class="todo">[ПОДТВЕРДИТЬ: что и в каком формате выгружаем для 1С:Бухгалтерии для Казахстана]</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="learn" class="band">
+    <div class="wrap section">
+      <div style="max-width:720px;margin-bottom:36px">
+        <h2 class="h2">Доучим и поддержим</h2>
+        <p class="lead">Вы уже умеете работать в Poster. Покажем то, что обычно остаётся за кадром, чтобы вы уверенно советовали систему и экономили время на своих клиентах.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8l10-5 10 5-10 5-10-5z"/><path d="M6 10v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+          <h3>Обучение для бухгалтеров</h3>
+          <p>Склад и инвентаризация, техкарты и себестоимость, списания, финансовые отчёты. Бесплатно для партнёров. <span class="todo">[ФОРМАТ: вебинар или онлайн-курс]</span></p>
+        </div>
+        <div class="card">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg>
+          <h3>Сертификат партнёра Poster</h3>
+          <p>После обучения — сертификат, который можно показать клиентам. <span class="todo">[ПОДТВЕРДИТЬ]</span></p>
+        </div>
+        <div class="card">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+          <h3>Личный менеджер партнёра</h3>
+          <p>Отвечает на ваши вопросы по учёту в Poster и ведёт ваших клиентов от демо до запуска.</p>
+        </div>
+        <div class="card">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
+          <h3>Готовые материалы</h3>
+          <p>Презентация и коммерческое предложение для клиента, чек-лист перехода с другой кассы.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <h2 class="h2" style="margin-bottom:36px">Как это работает</h2>
+    <div class="grid">
+      <div class="step"><span class="num">1</span><h3>Оставляете заявку</h3><p>Подписываем договор, выдаём вашу ссылку и приглашаем на обучение.</p></div>
+      <div class="step"><span class="num">2</span><h3>Рекомендуете клиенту</h3><p>Показываете систему на своих отчётах или просто передаёте нам контакт владельца.</p></div>
+      <div class="step"><span class="num">3</span><h3>Мы подключаем</h3><p>Демо, настройка меню и склада, обучение персонала, поддержка 24/7. Вы не тратите время.</p></div>
+      <div class="step"><span class="num">4</span><h3>Получаете выплаты</h3><p>Каждый месяц, пока клиент платит, в пределах срока программы. Статус клиентов видно онлайн.</p></div>
+    </div>
+  </section>
+
+  <section id="calc" class="band">
+    <div class="wrap section calc">
+      <div class="calc-main">
+        <div>
+          <h2 class="h2">Сколько вы заработаете</h2>
+          <p class="lead">Чем больше клиентов вы приводите, тем дольше идут выплаты.</p>
+        </div>
+        <div class="field">
+          <label class="field-label" for="clients">Клиентов приведёте: <span data-out="clients">3</span></label>
+          <input id="clients" type="range" min="1" max="20" step="1" value="3">
+        </div>
+        <div class="field">
+          <span class="field-label" id="priceLabel">Средний платёж клиента в месяц</span>
+          <div class="row" role="group" aria-labelledby="priceLabel" id="priceGroup"></div>
+        </div>
+        <div class="tiers" id="tiers"></div>
+      </div>
+      <div class="result" aria-live="polite">
+        <p class="k" style="font-size:15px">Ваш доход за <span data-out="clients">3</span> <span data-out="clientsWord">клиентов</span></p>
+        <div><p class="k">Каждый месяц</p><p class="v"><span data-out="monthly">13 500</span> ₸</p></div>
+        <div><p class="k">Срок выплат</p><p class="v mid"><span data-out="months">6</span> мес.</p></div>
+        <div class="total"><p class="k">Итого за срок</p><p class="v"><span data-out="total">81 000</span> ₸</p></div>
+        <p class="note">Расчёт: <span data-out="share">30</span>% от подписки клиента. Выплачиваем за каждый оплаченный месяц.</p>
+        <a class="btn" href="#join">Хочу так же</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap section">
+    <div class="faq" style="margin:0 auto">
+      <h2 class="h2" style="margin-bottom:14px">Частые вопросы</h2>
+      <details><summary>Мне нужно самому показывать систему?</summary><p>Как вам удобнее. Вы знаете Poster и можете показать его на своих отчётах. Или просто передайте контакт: демо, настройку и обучение персонала проведём мы.</p></details>
+      <details><summary>Я уже веду клиента в Poster. Он засчитывается?</summary><p>Выплаты идут за новых клиентов, которые подключились по вашей рекомендации. Обучение и личный менеджер доступны вам сразу после регистрации.</p></details>
+      <details><summary>Как и когда приходят выплаты?</summary><p>Каждый месяц по договору, на счёт ИП или ТОО. <span class="todo">[УТОЧНИТЬ: день выплаты и закрывающие документы]</span></p></details>
+      <details><summary>Что будет, если клиент перестанет платить?</summary><p>Выплата начисляется за каждый оплаченный клиентом месяц. Если клиент вернётся в пределах срока программы, выплаты продолжатся.</p></details>
+      <details><summary>Мои клиенты не в Алматы. Это подходит?</summary><p>Да, подключаем по всему Казахстану онлайн. Выезд специалиста возможен по договорённости и оплачивается отдельно.</p></details>
+      <details><summary>Для каких бизнесов подходит Poster?</summary><p>Кафе, кофейни, рестораны, фастфуд, бары, пекарни и небольшие магазины. Есть 15 дней бесплатного пробного периода.</p></details>
+    </div>
+  </section>
+
+  <section id="join" class="band">
+    <div class="wrap section join">
+      <div class="join-text">
+        <h2 class="h2">Стать партнёром Poster</h2>
+        <p class="lead">Оставьте контакты. Менеджер свяжется в течение рабочего дня, расскажет условия, пришлёт договор и запишет на обучение.</p>
+        <p class="muted" style="font-size:15px">Или напишите в WhatsApp: <a id="waLink" href="#">[НОМЕР]</a></p>
+      </div>
+      <form id="joinForm" novalidate>
+        <div class="f"><label for="f-name">Имя</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="f"><label for="f-phone">Телефон / WhatsApp</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7" required></div>
+        <div class="f"><label for="f-city">Город</label><input id="f-city" name="city" type="text"></div>
+        <div class="f"><label for="f-client">Клиент, у которого ведёте учёт в Poster</label><input id="f-client" name="poster_client" type="text"></div>
+        <div class="f full"><label for="f-count">Сколько кафе и магазинов ведёте всего</label>
+          <select id="f-count" name="clients_count"><option>1–3</option><option>4–10</option><option>11–30</option><option>Больше 30</option></select>
+        </div>
+        <div class="consent full"><input id="f-consent" name="consent" type="checkbox" required><label for="f-consent">Согласен на обработку персональных данных</label></div>
+        <button class="btn btn-primary full" type="submit" style="min-height:52px;font-size:17px">Отправить заявку</button>
+        <p class="form-msg full" id="formMsg" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>Poster · система автоматизации для общепита и розницы</span>
+    <a href="https://joinposter.com">joinposter.com</a>
+  </div>
+</footer>
+
+<script>
+  // ===== НАСТРОЙКИ: поменяйте под реальные условия =====
+  var CONFIG = {
+    avgCheck: 15000,        // средний платёж клиента, ₸/мес — [ПОДТВЕРДИТЬ]
+    share: 30,              // % от подписки
+    tier6From: 3,           // с какого числа клиентов выплаты 6 мес. — [ПОДТВЕРДИТЬ]
+    tier12From: 5,          // с какого числа клиентов выплаты 12 мес. — [ПОДТВЕРДИТЬ]
+    whatsapp: '',           // номер без +, например '77001234567'
+    formEndpoint: ''        // URL для POST (HubSpot / Formspree и т.п.). Пусто → заявка уходит в WhatsApp
+  };
+  // =====================================================
+
+  function fmt(n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+  function months(c) { return c >= CONFIG.tier12From ? 12 : c >= CONFIG.tier6From ? 6 : 3; }
+  function calc(c, price) { var m = months(c), monthly = c * price * CONFIG.share / 100; return { monthly: monthly, months: m, total: monthly * m }; }
+  function word(n) { return (n % 10 === 1 && n % 100 !== 11) ? 'клиента' : 'клиентов'; }
+  function out(key, val) { document.querySelectorAll('[data-out="' + key + '"]').forEach(function (el) { el.textContent = val; }); }
+
+  var state = { clients: 3, price: CONFIG.avgCheck };
+  var priceOptions = [Math.round(CONFIG.avgCheck * 0.66 / 500) * 500, CONFIG.avgCheck, Math.round(CONFIG.avgCheck * 1.66 / 500) * 500];
+
+  // Цены
+  var priceGroup = document.getElementById('priceGroup');
+  priceOptions.forEach(function (v) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'seg'; b.textContent = fmt(v) + ' ₸'; b.dataset.value = v;
+    b.addEventListener('click', function () { state.price = v; render(); });
+    priceGroup.appendChild(b);
+  });
+
+  // Уровни
+  var tiersEl = document.getElementById('tiers');
+  var tiers = [
+    { name: 'Старт', rule: '1–' + (CONFIG.tier6From - 1) + ' клиента', months: 3 },
+    { name: 'Партнёр', rule: 'от ' + CONFIG.tier6From + ' клиентов', months: 6 },
+    { name: 'Профи', rule: 'от ' + CONFIG.tier12From + ' клиентов', months: 12 }
+  ];
+  tiers.forEach(function (t) {
+    var d = document.createElement('div');
+    d.className = 'tier'; d.dataset.months = t.months;
+    d.innerHTML = '<p class="name"></p><p class="rule"></p><p class="months"></p>';
+    d.querySelector('.name').textContent = t.name;
+    d.querySelector('.rule').textContent = t.rule;
+    d.querySelector('.months').textContent = t.months + ' мес.';
+    tiersEl.appendChild(d);
+  });
+
+  var range = document.getElementById('clients');
+  range.addEventListener('input', function () { state.clients = parseInt(range.value, 10) || 1; render(); });
+
+  function render() {
+    var r = calc(state.clients, state.price);
+    out('clients', state.clients);
+    out('clientsWord', word(state.clients));
+    out('monthly', fmt(r.monthly));
+    out('months', r.months);
+    out('total', fmt(r.total));
+    out('share', CONFIG.share);
+    priceGroup.querySelectorAll('.seg').forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.value === state.price)); });
+    tiersEl.querySelectorAll('.tier').forEach(function (d) { d.classList.toggle('on', +d.dataset.months === r.months); });
+  }
+
+  // Статичные блоки
+  var ex = calc(5, CONFIG.avgCheck);
+  out('heroPerClient', fmt(CONFIG.avgCheck * CONFIG.share / 100 * 12));
+  out('exMonthly', fmt(ex.monthly));
+  out('exMonths', ex.months);
+  out('exTotal', fmt(ex.total));
+  out('avgCheck', fmt(CONFIG.avgCheck));
+  render();
+
+  // Тема
+  document.getElementById('themeBtn').addEventListener('click', function () {
+    var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+
+  // WhatsApp
+  var wa = document.getElementById('waLink');
+  if (CONFIG.whatsapp) { wa.href = 'https://wa.me/' + CONFIG.whatsapp; wa.textContent = '+' + CONFIG.whatsapp; wa.target = '_blank'; wa.rel = 'noopener'; }
+
+  // Форма
+  var form = document.getElementById('joinForm'), msg = document.getElementById('formMsg');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    msg.className = 'form-msg full'; msg.textContent = '';
+    var name = form.name.value.trim(), phone = form.phone.value.trim();
+    if (!name || !phone || !form.consent.checked) {
+      msg.classList.add('err'); msg.textContent = 'Заполните имя, телефон и отметьте согласие.'; return;
+    }
+    var data = new FormData(form);
+    if (CONFIG.formEndpoint) {
+      fetch(CONFIG.formEndpoint, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function (r) { if (!r.ok) throw new Error(); msg.classList.add('ok'); msg.textContent = 'Спасибо! Менеджер свяжется с вами в течение рабочего дня.'; form.reset(); })
+        .catch(function () { msg.classList.add('err'); msg.textContent = 'Не удалось отправить. Напишите нам в WhatsApp.'; });
+    } else if (CONFIG.whatsapp) {
+      var text = 'Здравствуйте! Хочу стать партнёром Poster.\nИмя: ' + name + '\nТелефон: ' + phone +
+        '\nГород: ' + form.city.value + '\nКлиент в Poster: ' + form.poster_client.value + '\nВеду заведений: ' + form.clients_count.value;
+      window.open('https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+      msg.classList.add('ok'); msg.textContent = 'Открываем WhatsApp — отправьте сообщение, и менеджер ответит.';
+    } else {
+      msg.classList.add('err'); msg.textContent = 'Форма ещё не подключена: укажите formEndpoint или whatsapp в CONFIG.';
+    }
+  });
+</script>
+</body>
+</html>
+ line2
